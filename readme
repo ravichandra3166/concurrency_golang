@@ -32,3 +32,54 @@ Scenario-Based Questions
 If the UDP discovery service fails to find devices on the network, how would you troubleshoot and fix the issue?
 How would you extend this architecture to support secure communication (e.g., TLS) for the TCP server and HTTP monitoring?
 Suppose you need to add metrics and health checks to this system. Where and how would you implement them?
+General Understanding
+
+Can you explain the purpose of the network-device CLI application and its main features as implemented in this program?
+How does the use of the cobra package facilitate command-line interface development in this project?
+What is the role of the rootCmd and how are subcommands like run, status, and config structured and used?
+
+Command and Flag Design
+
+How are global flags and command-specific flags defined and managed in this program?
+What is the purpose of the PersistentFlags on the root command versus the regular Flags on subcommands?
+How does the program handle command-line overrides for configuration parameters such as device ID, device name, and ports?
+
+Configuration Management
+
+Describe how the configuration is loaded in the loadConfig function. What fallback logic is implemented for locating the config file?
+How does the applyOverrides function modify the loaded configuration, and why is this important?
+What are the advantages and potential pitfalls of applying command-line overrides after loading a configuration file?
+
+Device Lifecycle and Execution
+
+Explain the flow of execution when the run command is invoked. How is the device created and started?
+What is the expected behavior of the dev.Run() method, and how does it relate to concurrency or blocking operations?
+How would you handle graceful shutdown or interruption signals in this context?
+
+Status and Monitoring
+
+How does the status command check the device status, and what assumptions does it make about the monitoring service?
+What HTTP endpoints are exposed for monitoring, and how might these be implemented in the device?
+How would you extend the status checking to programmatically verify the health of the device instead of just printing URLs?
+
+Configuration Display
+
+What information is displayed by the config command, and how does it reflect the current runtime configuration?
+How does the program ensure that command-line overrides are reflected in the displayed configuration?
+
+Error Handling and Logging
+
+How does the program handle errors during configuration loading and device creation?
+What logging strategy is used when the verbose flag is enabled, and how could it be improved for production use?
+
+Code Structure and Best Practices
+
+Why is the init function used to set up commands and flags, and what are the benefits of this approach?
+Discuss the separation of concerns between CLI handling, configuration management, and device orchestration in this program.
+How would you write unit tests for the CLI commands and their associated functions?
+
+Extension and Scalability
+
+If you were to add support for TLS or authentication, where in this program would you integrate those features?
+How might you implement concurrency for the TCP server and UDP discovery services within the device package?
+What strategies would you use to add metrics collection and health checks to this CLI tool?
