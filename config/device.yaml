@@ -1,0 +1,43 @@
+device:
+  id: "device-001"
+  name: "Network Device 1"
+  type: "gateway"
+  location: "datacenter-1"
+
+network:
+  tcp:
+    enabled: true
+    port: 8080
+    max_connections: 1000
+    timeout: 30s
+    buffer_size: 4096
+  udp:
+    enabled: true
+    port: 8081
+    discovery_port: 9999
+    multicast_address: "239.255.255.250"
+  
+services:
+  discovery:
+    enabled: true
+    interval: 30s
+    announce_interval: 10s
+  monitoring:
+    enabled: true
+    metrics_port: 8082
+    health_check_interval: 5s
+  
+logging:
+  level: "info"
+  file: "logs/device.log"
+  max_size: 100
+  max_backups: 3
+
+security:
+  tls:
+    enabled: false
+    cert_file: ""
+    key_file: ""
+  auth:
+    enabled: false
+    token_secret: ""
