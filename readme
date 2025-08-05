@@ -1,1 +1,34 @@
 Readme file 
+General Architecture and Design
+
+Can you explain the overall structure of this network-device project and the purpose of each main directory?
+How does the separation of concerns manifest in this architecture (e.g., cmd, internal, examples, config, logs)?
+Why might the internal directory be used here, and what benefits does it provide in Go projects?
+
+Package-Specific Questions
+
+What is the role of the cmd/device/ directory in a Go application?
+How would you implement configuration management in the internal/config/ package? What formats or libraries might you use?
+Describe how you would design the TCP server in internal/server/. What Go packages and concurrency patterns would be appropriate?
+What is the purpose of the UDP discovery service in internal/discovery/? How would you handle UDP communication in Go?
+Explain how device orchestration and HTTP monitoring might be implemented in internal/device/.
+How would you structure example client applications in examples/client/ to demonstrate usage of the network device?
+
+Runtime and Operational Concerns
+
+How would you handle logging in this architecture? What considerations are there for the logs/ directory created at runtime?
+What strategies would you use to manage configuration files in the config/ directory?
+How would you ensure thread safety and concurrency control across the different internal packages?
+
+Go-Specific and Best Practices
+
+What are the advantages of using the internal package in Go for this project?
+How would you manage dependencies and versioning in this project?
+How would you write unit tests or integration tests for the components in this architecture?
+Can you discuss error handling strategies you would apply in the TCP server and UDP discovery services?
+
+Scenario-Based Questions
+
+If the UDP discovery service fails to find devices on the network, how would you troubleshoot and fix the issue?
+How would you extend this architecture to support secure communication (e.g., TLS) for the TCP server and HTTP monitoring?
+Suppose you need to add metrics and health checks to this system. Where and how would you implement them?
